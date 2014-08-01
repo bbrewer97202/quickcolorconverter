@@ -1,0 +1,42 @@
+<!doctype html>
+<html ng-app="app">
+<head>
+	<title>Quick Color Converter</title>
+	<script type="text/javascript" src="js/vendor.js"></script>
+	<link type="text/css" rel="stylesheet" href="css/style.css"></link>
+</head>
+<body>
+
+<h1>Quick Color Converter</h1>
+
+<div ng-controller="colorConverter" class="quickColorConverter">
+	<form>
+		<fieldset class="sourceColorEntry">
+			<label for="sourceColor">Source Color <small>(any valid CSS color string)</small></label>
+			<input type="text" id="sourceColor" ng-model="color.src" ng-keyup="onKeyUp()" />
+		</fieldset>
+		<div class="results" ng-show="color.conversions.rgba">
+			<div class="colorSample" ng-style="{'backgroundColor': color.conversions.rgba}"></div>
+			<fieldset>
+				<label for="rgba">rgba:</label>
+				<input type="text" id="rgba" disabled="disabled" ng-model="color.conversions.rgba" />
+			</fieldset>
+			<fieldset>
+				<label for="hex6">hex:</label>
+				<input type="text" id="hex6" disabled="disabled" ng-model="color.conversions.hex6" />		
+			</fieldset>
+			<fieldset>
+				<label for="hex3">hex shorthand:</label>
+				<input type="text" id="hex3" disabled="disabled" ng-model="color.conversions.hex3" />
+			</fieldset>
+			<fieldset>
+				<label for="keyword">keyword:</label>
+				<input type="text" id="keyword" disabled="disabled" ng-model="color.conversions.keyword" />		
+			</fieldset>
+		</div>
+	</form>
+</div>
+
+<script type="text/javascript" src="js/script.js"></script>
+</body>
+</html>
